@@ -2,26 +2,44 @@
   <div class="body-wrapper">
     <div class="body">
       <div class="body__nav">
-        <span class="selected">POSTS</span>
-        <span>IGTV</span>
-        <span>SAVED</span>
-        <span>TAGGED</span>
+        <div :key="page.id" v-for="page in pages">
+          <span :class="{selected: page.selected}" @click="select(page.id)">{{page.name.toLocaleUpperCase()}}</span>
+        </div>
       </div>
-      <Posts :isSelected="true"/>
+      <Posts :isSelected="currentPage(0)"></Posts>
+      <IGTV :isSelected="currentPage(1)" />
     </div>
   </div>
 </template>
 
 <script>
+
 import Posts from "@/components/ProfileBody/Posts";
+import IGTV from "@/components/ProfileBody/IGTV";
+
 export default {
   name: "ProfileBody",
   components: {
     Posts,
+    IGTV,
   },
   data() {
     return {
-      selected: 'current'
+      pages: [
+        { name: 'Posts', selected: true, id: 0 },
+        { name: 'IGTV', selected: false, id: 1 },
+        { name: 'Saved', selected: false, id: 2 },
+        { name: 'Tagged', selected: false, id: 3 },
+      ]
+    }
+  },
+  methods: {
+    select(i) {
+      this.pages.map(page => page.selected = false)
+      this.pages[i].selected = true
+    },
+    currentPage(i){
+      return this.pages[i].selected
     }
   },
 }
