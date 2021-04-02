@@ -2,13 +2,12 @@
   <div class="body-wrapper">
     <div class="body">
       <div class="body__nav">
-        <span>POSTS</span>
+        <span class="selected">POSTS</span>
         <span>IGTV</span>
         <span>SAVED</span>
         <span>TAGGED</span>
       </div>
-      <Posts />
-
+      <Posts :isSelected="true"/>
     </div>
   </div>
 </template>
@@ -19,12 +18,17 @@ export default {
   name: "ProfileBody",
   components: {
     Posts,
-  }
+  },
+  data() {
+    return {
+      selected: 'current'
+    }
+  },
 }
 </script>
 
-
 <style scoped lang="scss">
+
 .body-wrapper {
   margin: 0 1.5rem;
   border-top: 1px solid #cecece;
@@ -34,13 +38,15 @@ export default {
       font-weight: bolder;
       font-size: small;
       color: #8d8d8d;
-      height: 50px;
       max-width: 400px;
-      margin: 0 auto;
+      margin: 20px auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
+  }
+  .selected {
+    color: black;
   }
 }
 </style>

@@ -1,9 +1,7 @@
 <template>
-  <div class="posts-wrapper">
+  <div v-if="isSelected" class="posts-wrapper">
     <div v-bind:key="post" v-for="post in posts">
-      <div class="post">
-
-      </div>
+      <div class="post"></div>
     </div>
   </div>
 </template>
@@ -11,12 +9,14 @@
 <script>
 export default {
   name: "Posts",
+  props: {
+    isSelected: Boolean,
+  },
   data() {
     return {
       posts: [1, 2, 3, 4, 5, 6]
     }
-  }
-
+  },
 }
 </script>
 
@@ -37,4 +37,5 @@ export default {
     background-color: #e2e2e2;
   }
 }
+
 </style>

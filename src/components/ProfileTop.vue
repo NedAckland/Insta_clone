@@ -29,7 +29,7 @@ export default {
   max-width: 800px;
   .avatar {
     width: 150px;
-    &__picture{
+    &__picture {
       z-index: -1;
       border-radius: 50%;
       width: 100%;
@@ -48,7 +48,6 @@ export default {
       margin-bottom: 30px;
     }
     &__name {
-
       font-weight: bolder;
     }
   }
