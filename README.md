@@ -1,5 +1,5 @@
 # styling
-
+making an instagram profile clone in Vue using Bem naming convention.
 ## Project setup
 ```
 npm install
