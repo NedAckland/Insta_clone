@@ -1,10 +1,10 @@
 <template>
-  <div v-if="isSelected">igtv tab</div>
+  <div v-if="isSelected">Tagged</div>
 </template>
 
 <script>
 export default {
-  name: "IGTV",
+  name: "Tagged",
   props: {
     isSelected: Boolean,
   }

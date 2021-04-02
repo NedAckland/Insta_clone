@@ -6,8 +6,11 @@
           <span :class="{selected: page.selected}" @click="select(page.id)">{{page.name.toLocaleUpperCase()}}</span>
         </div>
       </div>
-      <Posts :isSelected="currentPage(0)"></Posts>
+
+      <Posts :isSelected="currentPage(0)" />
       <IGTV :isSelected="currentPage(1)" />
+      <Saved :isSelected="currentPage(2)" />
+      <Tagged :isSelected="currentPage(3)" />
     </div>
   </div>
 </template>
@@ -16,12 +19,16 @@
 
 import Posts from "@/components/ProfileBody/Posts";
 import IGTV from "@/components/ProfileBody/IGTV";
+import Saved from "@/components/ProfileBody/Saved";
+import Tagged from "@/components/ProfileBody/Tagged";
 
 export default {
   name: "ProfileBody",
   components: {
     Posts,
     IGTV,
+    Saved,
+    Tagged
   },
   data() {
     return {
