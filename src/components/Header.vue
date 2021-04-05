@@ -5,19 +5,27 @@
         <img class="logo__image" src="https://1000logos.net/wp-content/uploads/2017/02/Instagram-Logo.png" alt="">
       </div>
       <input class="header__search-bar">
-      <div>here</div>
+      <div class="avatar">
+        <img class="avatar__picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUf9QPA3pe7BY91OIKO_4xqJfLRsPWJyHDRQ&usqp=CAU" alt="">
+				<Dropdown />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import Dropdown from './dropdown/Dropdown'
+
 export default {
-name: "Header"
+	name: "Header",
+	components: {
+		Dropdown,
+	}
+
 }
 </script>
 
 <style scoped lang="scss">
-
 .header--underline {
     width: 100vw;
     border-bottom: 1px solid #cecece;
@@ -44,10 +52,26 @@ name: "Header"
       height: 30px;
       border-radius: 5px;
       background-color: #fff;
-      border: 1px solid #8d8d8d;
+      border: 1px solid #c4c4c4;
       &:hover{
-        border: 2px solid #2100b3;
+        border: 1px solid #b1b1b1;
       }
+    }
+  }
+  .avatar {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1.5px solid black;
+    
+    &__picture {
+      width: 90%;
+      text-align: center;
+      border-radius: 50%;
     }
   }
 }

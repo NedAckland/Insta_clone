@@ -33,4 +33,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
 }
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
 </style>

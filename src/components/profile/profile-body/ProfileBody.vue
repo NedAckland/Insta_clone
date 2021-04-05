@@ -54,8 +54,9 @@ export default {
 <style scoped lang="scss">
 
 .body-wrapper {
-  margin: 0 1.5rem;
+  margin: 0 auto;
   border-top: 1px solid #cecece;
+  width: 800px;
   .body {
     &__nav {
       cursor: pointer;
