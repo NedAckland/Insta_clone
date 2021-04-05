@@ -1,13 +1,15 @@
-/* eslint-disable vue/comment-directive */
 <template>
-    <div class="popup">
+    <div v-show="isVisible" class="popup">
         basic dropdown
     </div>
 </template>
 
 <script>
 export default {
-    name: "Dropdown"
+    name: "Dropdown",
+    props: {
+        isVisible: Boolean,
+    },
 }
 </script>
 
@@ -18,7 +20,7 @@ export default {
     position: absolute;
     background-color: rgb(255, 255, 255);
     top: 52px;
-    margin-right: 105px;
+    margin-right: 107px;
     z-index: 500;
     padding: 1.125em 1.5em;
     border-radius: 0.5rem;

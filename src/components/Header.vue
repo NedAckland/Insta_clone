@@ -6,8 +6,8 @@
       </div>
       <input class="header__search-bar">
       <div class="avatar">
-        <img class="avatar__picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUf9QPA3pe7BY91OIKO_4xqJfLRsPWJyHDRQ&usqp=CAU" alt="">
-				<Dropdown />
+        <img @click="setPopupVisible" class="avatar__picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUf9QPA3pe7BY91OIKO_4xqJfLRsPWJyHDRQ&usqp=CAU" alt="">
+					<Dropdown :isVisible="popupVisible" />
       </div>
     </div>
   </div>
@@ -20,12 +20,25 @@ export default {
 	name: "Header",
 	components: {
 		Dropdown,
-	}
+	},
+	data() {
+		return {
+			popupVisible: true,
+		}
+	},
+	methods: {
+		setPopupVisible() {
+			this.popupVisible = !this.popupVisible
+		}
+	},
 
 }
 </script>
 
 <style scoped lang="scss">
+.popup--wrapepr {
+	position: absolute;
+}
 .header--underline {
     width: 100vw;
     border-bottom: 1px solid #cecece;
