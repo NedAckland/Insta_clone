@@ -8,8 +8,8 @@
 
 <script>
 import Header from './components/Header.vue'
-import ProfileTop from './components/ProfileTop.vue'
-import ProfileBody from "@/components/ProfileBody/ProfileBody";
+import ProfileTop from './components/profile/ProfileTop.vue'
+import ProfileBody from "@/components/profile/profile-body/ProfileBody";
 
 export default {
   name: 'App',
